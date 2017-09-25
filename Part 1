@@ -1,0 +1,11 @@
+getwd()
+setwd("H:/R/Data Science Course/course 3 Getting and Cleaning Data/rprog-data-ProgAssignment3-data")
+
+#part1 Plot the 30-day mortality rates for heart attack
+#read dataset
+outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
+head(outcome)
+#select column 11 and convert type into numeric
+outcome[, 11] <- as.numeric(outcome[, 11])
+## You may get a warning about NAs being introduced; that is okay
+hist(outcome[, 11])
